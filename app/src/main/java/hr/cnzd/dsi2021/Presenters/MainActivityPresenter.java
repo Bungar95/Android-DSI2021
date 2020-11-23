@@ -1,7 +1,6 @@
 package hr.cnzd.dsi2021.Presenters;
 
 import android.content.Intent;
-import android.util.Log;
 import android.widget.ImageButton;
 
 import hr.cnzd.dsi2021.R;

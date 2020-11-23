@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
-import android.widget.Toast;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import hr.cnzd.dsi2021.Presenters.IMainActivity;
