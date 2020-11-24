@@ -44,6 +44,10 @@ public class MainActivityPresenter implements IMainActivity.Presenter{
                 sliderItems.add(R.drawable.djeca02);
                 sliderItems.add(R.drawable.djeca03);
                 sliderItems.add(R.drawable.djeca04);
+                sliderItems.add(R.drawable.djeca05);
+                sliderItems.add(R.drawable.djeca06);
+                sliderItems.add(R.drawable.djeca07);
+                sliderItems.add(R.drawable.djeca08);
                 activityIntent.putIntegerArrayListExtra("list", (ArrayList<Integer>) sliderItems);
                 break;
             }
@@ -52,6 +56,10 @@ public class MainActivityPresenter implements IMainActivity.Presenter{
                 sliderItems.add(R.drawable.roditelji02);
                 sliderItems.add(R.drawable.roditelji03);
                 sliderItems.add(R.drawable.roditelji04);
+                sliderItems.add(R.drawable.roditelji05);
+                sliderItems.add(R.drawable.roditelji06);
+                sliderItems.add(R.drawable.roditelji07);
+                sliderItems.add(R.drawable.roditelji08);
                 activityIntent.putIntegerArrayListExtra("list", (ArrayList<Integer>) sliderItems);
                 break;
             }
