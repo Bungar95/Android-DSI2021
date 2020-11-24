@@ -10,6 +10,7 @@ import java.util.List;
 
 import hr.cnzd.dsi2021.R;
 import hr.cnzd.dsi2021.Utilities.Adapters.ViewPagerAdapter;
+import me.relex.circleindicator.CircleIndicator3;
 
 public class ViewPagerActivity extends AppCompatActivity {
 
@@ -24,5 +25,9 @@ public class ViewPagerActivity extends AppCompatActivity {
 
         viewPager2 = findViewById(R.id.view_pager2);
         viewPager2.setAdapter(new ViewPagerAdapter(sliderItems, this));
+
+        //https://github.com/ongakuer/CircleIndicator
+        CircleIndicator3 indicator = findViewById(R.id.indicator);
+        indicator.setViewPager(viewPager2);
     }
 }
