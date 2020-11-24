@@ -7,5 +7,6 @@ public interface IMainActivity {
 
     interface Presenter{
         Intent infoButtonClicked(ImageButton button, Intent intent);
+        Intent viewPagerButtonClicked(ImageButton button, Intent intent);
     }
 }

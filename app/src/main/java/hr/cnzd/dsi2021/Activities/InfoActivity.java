@@ -1,16 +1,13 @@
 package hr.cnzd.dsi2021.Activities;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import butterknife.BindView;
 import hr.cnzd.dsi2021.Presenters.IInfoActivity;
 import hr.cnzd.dsi2021.Presenters.InfoActivityPresenter;
 import hr.cnzd.dsi2021.R;
@@ -18,10 +15,8 @@ import hr.cnzd.dsi2021.R;
 public class InfoActivity extends AppCompatActivity implements IInfoActivity.View {
 
     private IInfoActivity.Presenter mPresenter;
-    private WebView webView;
     private String link;
 
-    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,14 +27,15 @@ public class InfoActivity extends AppCompatActivity implements IInfoActivity.Vie
 
     @Override
     public void init() {
-        initWebview();
+        WebView webView = findViewById(R.id.webview);
+        initWebView(webView);
         getMainActivityIntent();
         webView.loadUrl(link);
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
-    public void initWebview() {
-        webView = findViewById(R.id.webview);
+    public void initWebView(WebView webView) {
         webView.setWebViewClient(new WebViewClient());
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setDomStorageEnabled(true);

@@ -15,10 +15,17 @@ public class MainActivity extends AppCompatActivity {
 
     private IMainActivity.Presenter mPresenter;
 
-    @OnClick({R.id.imgBtn1, R.id.imgBtn2, R.id.imgBtn4, R.id.imgBtn5})
+    @OnClick({R.id.imgBtn1, R.id.imgBtn2, R.id.imgBtn5, R.id.imgBtn6})
     public void onClick(ImageButton button) {
         Intent intent = new Intent(this, InfoActivity.class);
         mPresenter.infoButtonClicked(button, intent);
+        startActivity(intent);
+    }
+
+    @OnClick({R.id.imgBtn3, R.id.imgBtn4})
+    public void onClick2(ImageButton button){
+        Intent intent = new Intent(this, ViewPagerActivity.class);
+        mPresenter.viewPagerButtonClicked(button, intent);
         startActivity(intent);
     }
 
