@@ -1,12 +1,12 @@
 package hr.cnzd.dsi2021.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import hr.cnzd.dsi2021.Activities.Quiz.QuizIntroActivity;
 import hr.cnzd.dsi2021.Presenters.IMainActivity;
 import hr.cnzd.dsi2021.Presenters.MainActivityPresenter;
 import hr.cnzd.dsi2021.R;
@@ -26,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
     public void onClick2(ImageButton button){
         Intent intent = new Intent(this, ViewPagerActivity.class);
         mPresenter.viewPagerButtonClicked(button, intent);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.imgBtn7)
+    public void onClick3(){
+        Intent intent = new Intent(this, QuizIntroActivity.class);
         startActivity(intent);
     }
 

@@ -11,10 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DSI2021">
-        <activity
-            android:name=".Activities.ViewPagerActivity"
-            android:screenOrientation="portrait">
-        </activity>
+
         <activity
             android:name=".Activities.MainActivity"
             android:screenOrientation="portrait">
@@ -27,6 +24,16 @@
 
         <activity
             android:name=".Activities.InfoActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".Activities.ViewPagerActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".Activities.Quiz.QuizIntroActivity"
             android:screenOrientation="portrait">
         </activity>
 

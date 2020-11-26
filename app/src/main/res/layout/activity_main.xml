@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3CFFAB40"
     tools:context="hr.cnzd.dsi2021.Activities.MainActivity">
 
     <LinearLayout
@@ -131,24 +132,12 @@
 
             <ImageButton
                 android:id="@+id/imgBtn7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:background="@null"
                 android:padding="3dp"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/kviz" />
-
-            <ImageButton
-                android:id="@+id/imgBtn8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="@null"
-                android:padding="3dp"
-                android:scaleType="fitCenter"
+                android:scaleType="fitXY"
                 app:srcCompat="@drawable/kviz2" />
         </LinearLayout>
 

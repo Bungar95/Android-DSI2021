@@ -16,13 +16,13 @@ import java.util.List;
 
 import hr.cnzd.dsi2021.R;
 
-public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.SliderViewHolder>{
+public class ViewPagerPicassoAdapter extends RecyclerView.Adapter<ViewPagerPicassoAdapter.SliderViewHolder>{
 
     private List<Integer> sliderItems;
     private Context context;
     private ViewPager2 viewPager2;
 
-    public ViewPagerAdapter(List<Integer> sliderItems, Context context) {
+    public ViewPagerPicassoAdapter(List<Integer> sliderItems, Context context) {
         this.sliderItems = sliderItems;
         this.context = context;
     }
