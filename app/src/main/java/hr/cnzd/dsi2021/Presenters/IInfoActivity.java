@@ -6,12 +6,12 @@ public interface IInfoActivity {
 
     interface View {
         void init();
-        void initWebView(WebView webView);
         void getMainActivityIntent();
     }
 
     interface Presenter {
         void created();
+        void configureWebView(WebView webView);
     }
 
 }

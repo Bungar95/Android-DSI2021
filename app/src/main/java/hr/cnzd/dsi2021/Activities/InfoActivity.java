@@ -28,22 +28,9 @@ public class InfoActivity extends AppCompatActivity implements IInfoActivity.Vie
     @Override
     public void init() {
         WebView webView = findViewById(R.id.webview);
-        initWebView(webView);
+        mPresenter.configureWebView(webView);
         getMainActivityIntent();
         webView.loadUrl(link);
-    }
-
-    @SuppressLint("SetJavaScriptEnabled")
-    @Override
-    public void initWebView(WebView webView) {
-        webView.setWebViewClient(new WebViewClient());
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setDomStorageEnabled(true);
-        webView.getSettings().setAppCacheEnabled(true);
-        webView.getSettings().setAllowFileAccess(true);
-        webView.getSettings().setAllowContentAccess(true);
-        webView.getSettings().setAllowFileAccessFromFileURLs(true);
-        webView.getSettings().setAllowUniversalAccessFromFileURLs(true);
     }
 
     @Override

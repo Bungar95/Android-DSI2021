@@ -1,6 +1,8 @@
 package hr.cnzd.dsi2021.Activities.Quiz;
 
 import android.os.Bundle;
+import android.webkit.WebView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
@@ -13,16 +15,27 @@ import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import hr.cnzd.dsi2021.Presenters.Quiz.IQuizIntro;
+import hr.cnzd.dsi2021.Presenters.Quiz.QuizIntroPresenter;
 import hr.cnzd.dsi2021.R;
 import hr.cnzd.dsi2021.Utilities.Adapters.QuizFragmentAdapter;
 
-public class QuizIntroActivity extends AppCompatActivity {
+public class QuizIntroActivity extends AppCompatActivity implements IQuizIntro.View {
 
+    IQuizIntro.Presenter mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro_quiz);
+        mPresenter = new QuizIntroPresenter(this);
+        mPresenter.created();
+    }
+
+    @Override
+    public void initFragmentsAndTabLayout() {
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         ViewPager2 viewPager2 = findViewById(R.id.quizViewPager);
         viewPager2.setAdapter(new QuizFragmentAdapter(this));
@@ -46,6 +59,5 @@ public class QuizIntroActivity extends AppCompatActivity {
         }
         );
         tabLayoutMediator.attach();
-
     }
 }
