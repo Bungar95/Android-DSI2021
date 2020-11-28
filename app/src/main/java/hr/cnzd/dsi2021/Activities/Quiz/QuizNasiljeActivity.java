@@ -7,11 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
-import butterknife.OnClick;
 import hr.cnzd.dsi2021.Model.KvizPitanje;
 import hr.cnzd.dsi2021.Presenters.Quiz.IQuizActivity;
 import hr.cnzd.dsi2021.Presenters.Quiz.QuizPresenter;
@@ -23,10 +21,11 @@ public class QuizNasiljeActivity extends AppCompatActivity implements IQuizActiv
     IQuizActivity.Presenter mPresenter;
     private List<KvizPitanje> pitanja;
     private int trenutnoPitanje;
+    private Intent resultIntent;
 
     private TextView txtPitanje;
     private Button o1,o2,o3,o4;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +43,7 @@ public class QuizNasiljeActivity extends AppCompatActivity implements IQuizActiv
 
     @Override
     public void init() {
+        resultIntent = new Intent(this, QuizResultActivity.class);
         txtPitanje = findViewById(R.id.pitanje);
         o1=findViewById(R.id.o1);
         o2=findViewById(R.id.o2);
@@ -93,9 +93,9 @@ public class QuizNasiljeActivity extends AppCompatActivity implements IQuizActiv
 
     @Override
     public void ucitajPitanje() {
-        if(trenutnoPitanje==BROJ_PITANJA){
-            int postotak = mPresenter.zavrsiKviz(pitanja);
-            Toast.makeText(this, postotak+"%", Toast.LENGTH_LONG).show();
+
+        if (trenutnoPitanje == BROJ_PITANJA){
+            zavrsiKviz();
             return;
         }
 
@@ -115,5 +115,19 @@ public class QuizNasiljeActivity extends AppCompatActivity implements IQuizActiv
 
         o4.setText(p.getOdgovori().get(3).getTekst());
         o4.setTag(p.getOdgovori().get(3).isTocno());
+    }
+
+    public void zavrsiKviz() {
+        int ukupno=0;
+        for(KvizPitanje p : pitanja){
+            ukupno+= p.isDaniOdgovor() ? 1 : 0;
+        }
+
+        int postotak = (int)(((float) ukupno/BROJ_PITANJA)*100);
+
+        Intent intent = new Intent(this, QuizResultActivity.class);
+        resultIntent.putExtra("postotak",postotak);
+        startActivity(resultIntent);
+        finish();
     }
 }
