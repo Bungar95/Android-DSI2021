@@ -11,30 +11,48 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import butterknife.OnClick;
 import hr.cnzd.dsi2021.Model.KvizPitanje;
 import hr.cnzd.dsi2021.Presenters.Quiz.IQuizActivity;
+import hr.cnzd.dsi2021.Presenters.Quiz.QuizPresenter;
 import hr.cnzd.dsi2021.R;
 
-public class QuizNasiljeActivity extends AppCompatActivity {
+public class QuizNasiljeActivity extends AppCompatActivity implements IQuizActivity.View {
 
-    private static int BROJ_PITANJA=10;
+    private static int BROJ_PITANJA = 10;
+    IQuizActivity.Presenter mPresenter;
     private List<KvizPitanje> pitanja;
     private int trenutnoPitanje;
 
     private TextView txtPitanje;
     private Button o1,o2,o3,o4;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_nasilje);
+        mPresenter = new QuizPresenter(this);
+        mPresenter.created();
+        ucitajPitanje();
+    }
 
+    private void daniOdgovor(View view) {
+        pitanja.get(trenutnoPitanje).setDaniOdgovor(Boolean.parseBoolean(view.getTag().toString()));
+        trenutnoPitanje++;
+        ucitajPitanje();
+    }
+
+    @Override
+    public void init() {
         txtPitanje = findViewById(R.id.pitanje);
         o1=findViewById(R.id.o1);
         o2=findViewById(R.id.o2);
         o3=findViewById(R.id.o3);
         o4=findViewById(R.id.o4);
+    }
 
+    @Override
+    public void initListeners() {
         o1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,25 +80,22 @@ public class QuizNasiljeActivity extends AppCompatActivity {
                 daniOdgovor(view);
             }
         });
+    }
 
+    @Override
+    public void initPitanja() {
         Intent i = getIntent();
         String vrsta = i.getStringExtra("vrsta");
 
         pitanja = KvizPitanje.getPitanja(vrsta,BROJ_PITANJA);
         trenutnoPitanje=0;
-
-        ucitajPitanje();
     }
 
-    private void daniOdgovor(View view) {
-        pitanja.get(trenutnoPitanje).setDaniOdgovor(Boolean.parseBoolean(view.getTag().toString()));
-        trenutnoPitanje++;
-        ucitajPitanje();
-    }
-
-    private void ucitajPitanje() {
-        if(trenutnoPitanje==10){
-            zavrsiKviz();
+    @Override
+    public void ucitajPitanje() {
+        if(trenutnoPitanje==BROJ_PITANJA){
+            int postotak = mPresenter.zavrsiKviz(pitanja);
+            Toast.makeText(this, postotak+"%", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -100,22 +115,5 @@ public class QuizNasiljeActivity extends AppCompatActivity {
 
         o4.setText(p.getOdgovori().get(3).getTekst());
         o4.setTag(p.getOdgovori().get(3).isTocno());
-    }
-
-    private void zavrsiKviz() {
-
-        int ukupno=0;
-        for(KvizPitanje p : pitanja){
-            ukupno+= p.isDaniOdgovor() ? 1 : 0;
-        }
-
-        int postotak = (int)(((float) ukupno/BROJ_PITANJA)*100);
-
-        //Intent intent = new Intent(this, KvizKraj.class);
-        //intent.putExtra("postotak",postotak);
-        //startActivity(intent);
-        //finish();
-        Toast.makeText(this, postotak+"%", Toast.LENGTH_LONG).show();
-
     }
 }

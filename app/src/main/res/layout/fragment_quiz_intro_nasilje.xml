@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.Quiz.QuizIntroFragmentNasilje">
+    tools:context=".Activities.Quiz.Introduction.QuizIntroFragmentNasilje">
 
     <WebView
         android:id="@+id/webViewKviz1"
@@ -18,27 +18,25 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/webView2">
+        app:layout_constraintTop_toBottomOf="@+id/webViewKviz1">
 
         <Button
             android:id="@+id/btnNasiljeOsnovna"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Osnovna škola" />
 
         <Button
             android:id="@+id/btnNasiljeSrednja"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Srednja škola" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Srednja škola"/>
     </LinearLayout>
 
 

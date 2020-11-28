@@ -1,4 +1,4 @@
-package hr.cnzd.dsi2021.Activities.Quiz;
+package hr.cnzd.dsi2021.Activities.Quiz.Introduction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import android.webkit.WebView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+import hr.cnzd.dsi2021.Activities.Quiz.QuizFakeNewsActivity;
 import hr.cnzd.dsi2021.R;
 
 public class QuizIntroFragmentNews extends Fragment {

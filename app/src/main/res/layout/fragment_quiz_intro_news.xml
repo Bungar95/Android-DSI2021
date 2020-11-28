@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:id="@+id/frameLayout2"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Activities.Quiz.QuizIntroFragmentNews">
+    tools:context=".Activities.Quiz.Introduction.QuizIntroFragmentNews">
 
     <WebView
         android:id="@+id/webViewKviz2"

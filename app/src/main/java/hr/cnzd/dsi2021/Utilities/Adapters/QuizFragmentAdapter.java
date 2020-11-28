@@ -1,18 +1,12 @@
 package hr.cnzd.dsi2021.Utilities.Adapters;
 
-import android.content.Context;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
-import androidx.viewpager2.widget.ViewPager2;
 
-import hr.cnzd.dsi2021.Activities.Quiz.QuizIntroFragmentNasilje;
-import hr.cnzd.dsi2021.Activities.Quiz.QuizIntroFragmentNews;
+import hr.cnzd.dsi2021.Activities.Quiz.Introduction.QuizIntroFragmentNasilje;
+import hr.cnzd.dsi2021.Activities.Quiz.Introduction.QuizIntroFragmentNews;
 
 public class QuizFragmentAdapter extends FragmentStateAdapter {
 

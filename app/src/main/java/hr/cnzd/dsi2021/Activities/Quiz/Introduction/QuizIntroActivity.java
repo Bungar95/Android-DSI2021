@@ -1,22 +1,14 @@
-package hr.cnzd.dsi2021.Activities.Quiz;
+package hr.cnzd.dsi2021.Activities.Quiz.Introduction;
 
 import android.os.Bundle;
-import android.webkit.WebView;
-import android.widget.Toast;
-import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 import hr.cnzd.dsi2021.Presenters.Quiz.IQuizIntro;
 import hr.cnzd.dsi2021.Presenters.Quiz.QuizIntroPresenter;
 import hr.cnzd.dsi2021.R;

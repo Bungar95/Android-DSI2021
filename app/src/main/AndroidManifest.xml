@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DSI2021">
-        <activity android:name=".Activities.Quiz.QuizFakeNewsActivity"></activity>
+        <activity android:name=".Activities.Quiz.QuizResultActivity"></activity>
+        <activity android:name=".Activities.Quiz.QuizFakeNewsActivity" />
         <activity android:name=".Activities.Quiz.QuizNasiljeActivity" />
         <activity
             android:name=".Activities.MainActivity"
@@ -29,7 +30,7 @@
             android:name=".Activities.ViewPagerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activities.Quiz.QuizIntroActivity"
+            android:name=".Activities.Quiz.Introduction.QuizIntroActivity"
             android:screenOrientation="portrait" />
 
         <meta-data

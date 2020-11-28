@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import hr.cnzd.dsi2021.Activities.Quiz.QuizIntroActivity;
+import hr.cnzd.dsi2021.Activities.Quiz.Introduction.QuizIntroActivity;
 import hr.cnzd.dsi2021.Presenters.IMainActivity;
 import hr.cnzd.dsi2021.Presenters.MainActivityPresenter;
 import hr.cnzd.dsi2021.R;
