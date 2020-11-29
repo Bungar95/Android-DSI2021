@@ -17,5 +17,7 @@ public interface IQuizActivity {
 
     interface Presenter {
         void created();
+        boolean checkEndOfQuiz(int currentNum, int endNum);
+        Intent zavrsiKviz(List<KvizPitanje> pitanja, Intent intent, String type);
     }
 }

@@ -23,6 +23,7 @@ public class QuizIntroFragmentNews extends Fragment {
     @OnClick(R.id.btnFakeNews)
     public void onClickBtnFakeNews(){
         Intent intent = new Intent(getActivity().getBaseContext(), QuizFakeNewsActivity.class);
+        intent.putExtra("vrsta", "fakeNews");
         startActivity(intent);
     }
 

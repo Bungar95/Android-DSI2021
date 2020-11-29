@@ -19,6 +19,7 @@ public class QuizNasiljeActivity extends AppCompatActivity implements IQuizActiv
 
     private static int BROJ_PITANJA = 10;
     IQuizActivity.Presenter mPresenter;
+    String quiz = "prepoznajmo_nasilje";
     private List<KvizPitanje> pitanja;
     private int trenutnoPitanje;
     private Intent resultIntent;
@@ -38,7 +39,10 @@ public class QuizNasiljeActivity extends AppCompatActivity implements IQuizActiv
     private void daniOdgovor(View view) {
         pitanja.get(trenutnoPitanje).setDaniOdgovor(Boolean.parseBoolean(view.getTag().toString()));
         trenutnoPitanje++;
-        ucitajPitanje();
+        if(mPresenter.checkEndOfQuiz(trenutnoPitanje, BROJ_PITANJA)) {
+            mPresenter.zavrsiKviz(pitanja, resultIntent, quiz);
+            startActivity(resultIntent);
+        }else ucitajPitanje();
     }
 
     @Override
@@ -94,11 +98,6 @@ public class QuizNasiljeActivity extends AppCompatActivity implements IQuizActiv
     @Override
     public void ucitajPitanje() {
 
-        if (trenutnoPitanje == BROJ_PITANJA){
-            zavrsiKviz();
-            return;
-        }
-
         setTitle("Pitanje " + String.valueOf(trenutnoPitanje+1) + "/" + BROJ_PITANJA);
 
         KvizPitanje p = pitanja.get(trenutnoPitanje);
@@ -115,19 +114,5 @@ public class QuizNasiljeActivity extends AppCompatActivity implements IQuizActiv
 
         o4.setText(p.getOdgovori().get(3).getTekst());
         o4.setTag(p.getOdgovori().get(3).isTocno());
-    }
-
-    public void zavrsiKviz() {
-        int ukupno=0;
-        for(KvizPitanje p : pitanja){
-            ukupno+= p.isDaniOdgovor() ? 1 : 0;
-        }
-
-        int postotak = (int)(((float) ukupno/BROJ_PITANJA)*100);
-
-        Intent intent = new Intent(this, QuizResultActivity.class);
-        resultIntent.putExtra("postotak",postotak);
-        startActivity(resultIntent);
-        finish();
     }
 }

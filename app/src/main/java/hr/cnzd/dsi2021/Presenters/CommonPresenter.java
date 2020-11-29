@@ -1,5 +1,6 @@
 package hr.cnzd.dsi2021.Presenters;
 
+import android.annotation.SuppressLint;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 

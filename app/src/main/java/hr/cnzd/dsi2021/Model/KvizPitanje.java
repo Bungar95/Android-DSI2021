@@ -11,6 +11,7 @@ public class KvizPitanje {
 
         private String tekst;
         private String vrsta;
+        private String tema;
         private List<KvizOdgovor> odgovori;
         private boolean daniOdgovor;
 
@@ -25,8 +26,10 @@ public class KvizPitanje {
             // RAZREDNA
             if(vrsta.equals("razredna")){
                 pitanja = PitanjaMladi.napuniPitanja();
+            }else if (vrsta.equals("stariji")){
+                pitanja = PitanjaStariji.napuniPitanja();
             }else{
-                pitanja= PitanjaStariji.napuniPitanja();
+                pitanja = PitanjaFakeNews.napuniPitanja();
             }
 
             Collections.shuffle(pitanja);
