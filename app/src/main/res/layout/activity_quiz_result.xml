@@ -49,6 +49,19 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnKviz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/kvizColorPrimary"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
         android:id="@+id/pocetak"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

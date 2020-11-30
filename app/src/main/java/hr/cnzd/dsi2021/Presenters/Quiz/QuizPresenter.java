@@ -37,7 +37,7 @@ public class QuizPresenter implements IQuizActivity.Presenter {
 
         int postotak = (int)(((float) ukupno/10)*100);
         intent.putExtra("postotak",postotak);
-        intent.putExtra("vrsta", type);
+        intent.putExtra("kviz", type);
         return intent;
     }
 

@@ -18,19 +18,18 @@ import hr.cnzd.dsi2021.R;
 
 public class QuizFakeNewsActivity extends AppCompatActivity implements IQuizActivity.View {
 
-    private static int BROJ_PITANJA = 1;
+    private static int BROJ_PITANJA = 10;
     IQuizActivity.Presenter mPresenter;
-    String quiz = "fake_news";
+    private String quiz;
     private List<KvizPitanje> pitanja;
     private int trenutnoPitanje;
     private Intent resultIntent;
+    private Button o1,o2,o3;
 
     private TextView txtTema,
             naslov1, naslov2, naslov3,
             podnaslov1, podnaslov2, podnaslov3,
             link1, link2, link3;
-
-    private Button o1,o2,o3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +52,7 @@ public class QuizFakeNewsActivity extends AppCompatActivity implements IQuizActi
     @Override
     public void init() {
         resultIntent = new Intent(this, QuizResultActivity.class);
+        quiz = "fakeNews";
         txtTema = findViewById(R.id.tvTema);
         link1 = findViewById(R.id.tvLink1);
         link2 = findViewById(R.id.tvLink2);

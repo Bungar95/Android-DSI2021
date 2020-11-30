@@ -19,7 +19,7 @@ public class QuizNasiljeActivity extends AppCompatActivity implements IQuizActiv
 
     private static int BROJ_PITANJA = 10;
     IQuizActivity.Presenter mPresenter;
-    String quiz = "prepoznajmo_nasilje";
+    String quiz;
     private List<KvizPitanje> pitanja;
     private int trenutnoPitanje;
     private Intent resultIntent;
@@ -49,6 +49,7 @@ public class QuizNasiljeActivity extends AppCompatActivity implements IQuizActiv
     public void init() {
         resultIntent = new Intent(this, QuizResultActivity.class);
         txtPitanje = findViewById(R.id.pitanje);
+        quiz = "prepoznajmo_nasilje";
         o1=findViewById(R.id.o1);
         o2=findViewById(R.id.o2);
         o3=findViewById(R.id.o3);
