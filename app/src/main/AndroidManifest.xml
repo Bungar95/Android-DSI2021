@@ -15,9 +15,11 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
 
-        <activity android:name=".Activities.Quiz.QuizResultActivity"></activity>
-        <activity android:name=".Activities.Quiz.QuizFakeNewsActivity" />
-        <activity android:name=".Activities.Quiz.QuizNasiljeActivity" />
+        <activity
+            android:name=".Activities.SplashScreenActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
         <activity
             android:name=".Activities.MainActivity"
             android:screenOrientation="portrait">
@@ -27,6 +29,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".Activities.Quiz.QuizResultActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".Activities.Quiz.QuizFakeNewsActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".Activities.Quiz.QuizNasiljeActivity"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".Activities.InfoActivity"
             android:screenOrientation="portrait" />

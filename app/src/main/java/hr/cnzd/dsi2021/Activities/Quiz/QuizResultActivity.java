@@ -29,7 +29,6 @@ public class QuizResultActivity extends AppCompatActivity {
         Intent i = getIntent();
         int postotak = i.getIntExtra("postotak",0);
         String vrsta = i.getStringExtra("kviz");
-        Log.d("Vrsta------>", vrsta);
 
         TextView txtPostotak = findViewById(R.id.postotak);
         txtPostotak.setText("Hvala vam što ste sudjelovali u kvizu! \n\n Uspješno ste riješili "
