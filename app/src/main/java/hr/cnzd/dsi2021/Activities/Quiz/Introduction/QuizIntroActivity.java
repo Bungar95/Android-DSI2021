@@ -1,9 +1,11 @@
 package hr.cnzd.dsi2021.Activities.Quiz.Introduction;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
@@ -24,6 +26,19 @@ public class QuizIntroActivity extends AppCompatActivity implements IQuizIntro.V
         setContentView(R.layout.activity_intro_quiz);
         mPresenter = new QuizIntroPresenter(this);
         mPresenter.created();
+    }
+
+    @Override
+    public void init() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_baseline_chevron_left_24));
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     @Override

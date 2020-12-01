@@ -19,7 +19,7 @@ public class QuizNasiljeActivity extends AppCompatActivity implements IQuizActiv
 
     private static int BROJ_PITANJA = 10;
     IQuizActivity.Presenter mPresenter;
-    String quiz;
+    private String quiz;
     private List<KvizPitanje> pitanja;
     private int trenutnoPitanje;
     private Intent resultIntent;

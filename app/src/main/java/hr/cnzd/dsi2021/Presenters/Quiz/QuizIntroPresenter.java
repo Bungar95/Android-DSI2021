@@ -12,6 +12,7 @@ public class QuizIntroPresenter extends CommonPresenter implements IQuizIntro.Pr
 
     @Override
     public void created() {
+        mView.init();
         mView.initFragmentsAndTabLayout();
     }
 }

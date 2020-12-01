@@ -6,6 +6,7 @@ import android.webkit.WebView;
 public interface IQuizIntro {
 
     interface View{
+        void init();
         void initFragmentsAndTabLayout();
     }
 

@@ -196,7 +196,7 @@ public class PitanjaFakeNews {
         o.setTocno(true);
         o.setTekst("Kanada legalizirala ljekoviti kokain.");
         o.setPodtekst("'Nekad smo bili najkul mjesto u Sjevernoj Americi. Ali u današnje vrijeme ako se želite nadrogirati i skijati, idete u Aspen (SAD), a ne u Whistler. To se mora promijeniti.");
-        o.setLink("https://bit.ly/36hySpG");
+        o.setLink("https://bit.ly/39qVh5U");
         p.getOdgovori().add(o);
         o = new KvizOdgovor();
         o.setTocno(false);
