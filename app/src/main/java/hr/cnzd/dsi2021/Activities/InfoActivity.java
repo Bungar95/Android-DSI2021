@@ -15,7 +15,6 @@ import hr.cnzd.dsi2021.R;
 public class InfoActivity extends AppCompatActivity implements IInfoActivity.View {
 
     private IInfoActivity.Presenter mPresenter;
-    private String link;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +27,8 @@ public class InfoActivity extends AppCompatActivity implements IInfoActivity.Vie
     @Override
     public void init() {
         WebView webView = findViewById(R.id.webview);
+        String link = mPresenter.checkStringIntentExtra(getIntent(), getIntent().getStringExtra("url"));
         mPresenter.configureWebView(webView);
-        getMainActivityIntent();
         webView.loadUrl(link);
-    }
-
-    @Override
-    public void getMainActivityIntent() {
-        if(getIntent() != null && getIntent().getStringExtra("url") != null) {
-            link = getIntent().getStringExtra("url");
-            Log.i("radi", getIntent().getStringExtra("url"));
-        }
     }
 }

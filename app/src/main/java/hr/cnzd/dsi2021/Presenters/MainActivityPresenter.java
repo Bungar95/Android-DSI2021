@@ -10,8 +10,9 @@ import hr.cnzd.dsi2021.R;
 
 public class MainActivityPresenter implements IMainActivity.Presenter{
 
-    public Intent infoButtonClicked(ImageButton button, Intent intent) {
+    public Intent mainActivityButtonClicked(ImageButton button, Intent intent) {
 
+        List<Integer> sliderItems = new ArrayList<>();
         switch (button.getId()){
             case R.id.imgBtn1: {
                 intent.putExtra("url", "file:///android_asset/prepoznajmo.html");
@@ -21,23 +22,6 @@ public class MainActivityPresenter implements IMainActivity.Presenter{
                 intent.putExtra("url", "file:///android_asset/sto_je_nasilje.html");
                 break;
             }
-            case R.id.imgBtn5: {
-                intent.putExtra("url", "file:///android_asset/znakovi.html");
-                break;
-            }
-            case R.id.imgBtn6: {
-                intent.putExtra("url", "file:///android_asset/pomoc.html");
-                break;
-            }
-        }
-        return intent;
-    }
-
-    @Override
-    public Intent viewPagerButtonClicked(ImageButton button, Intent intent) {
-
-        List<Integer> sliderItems = new ArrayList<>();
-        switch (button.getId()) {
             case R.id.imgBtn3: {
                 sliderItems.add(R.drawable.djeca01);
                 sliderItems.add(R.drawable.djeca02);
@@ -60,6 +44,14 @@ public class MainActivityPresenter implements IMainActivity.Presenter{
                 sliderItems.add(R.drawable.roditelji07);
                 sliderItems.add(R.drawable.roditelji08);
                 intent.putIntegerArrayListExtra("list", (ArrayList<Integer>) sliderItems);
+                break;
+            }
+            case R.id.imgBtn5: {
+                intent.putExtra("url", "file:///android_asset/znakovi.html");
+                break;
+            }
+            case R.id.imgBtn6: {
+                intent.putExtra("url", "file:///android_asset/pomoc.html");
                 break;
             }
         }

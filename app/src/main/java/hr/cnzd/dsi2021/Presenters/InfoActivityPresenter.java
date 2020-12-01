@@ -1,9 +1,6 @@
 package hr.cnzd.dsi2021.Presenters;
 
-import android.content.Context;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.Toast;
+import android.content.Intent;
 
 public class InfoActivityPresenter extends CommonPresenter implements IInfoActivity.Presenter {
 
@@ -17,4 +14,5 @@ public class InfoActivityPresenter extends CommonPresenter implements IInfoActiv
     public void created() {
         mView.init();
     }
+
 }

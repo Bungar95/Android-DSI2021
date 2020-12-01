@@ -45,13 +45,9 @@ public class QuizResultActivity extends AppCompatActivity {
                     TextView uuid = findViewById(R.id.uuid);
                     uuid.setText(uniqueID);
 
-                    txtNaputak.setText(Html.fromHtml("Molimo da napravite screenshot (uslikate zaslon mobitela) Vašeg koda i pošaljete na mail <br />" +
-                            "<b>kviz2020@dansigurnijeginterneta.org</b> <br />" +
-                            "i ako isti bude izvučen za neku od nagrada, " +
-                            "zatražite od roditelja ili skrbnika da nas kontaktira na broj 0800 606 606"));
+                    txtNaputak.setText(Html.fromHtml(String.valueOf(R.string.screenshot)));
                 } else {
-                    txtNaputak.setText("Žao nam je, niste uspješno riješili dovoljan postotak kviza za sudjelovanje u nagradnoj igri," +
-                            " ali uvijek možete ponovno probati!");
+                    txtNaputak.setText(R.string.nedovoljan_postotak);
                     Button b1 = findViewById(R.id.btnKviz);
                     b1.setVisibility(View.VISIBLE);
                     b1.setText("Ponoviti kviz");
@@ -65,8 +61,7 @@ public class QuizResultActivity extends AppCompatActivity {
                 break;
             }
             default: {
-                txtNaputak.setText(Html.fromHtml("Drago nam je što sudjelujete u Danu sigurnijeg interneta! Probajte ponovno ili riješite kviz 'Fake News' za " +
-                        "pokušaj osvajanja nagrade."));
+                txtNaputak.setText(Html.fromHtml(String.valueOf(R.string.drago_nam_je)));
             }
         }
 

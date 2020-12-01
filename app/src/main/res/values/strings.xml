@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">DSI 2021</string>
+
+    <!-- tekstovi za rezultat stranicu  -->
+
+    <string name="nedovoljan_postotak">
+        "Žao nam je, niste uspješno riješili dovoljan postotak kviza za sudjelovanje u nagradnoj igri,
+        ali uvijek možete ponovno probati!"
+    </string>
+
+    <string name="drago_nam_je">
+        "Drago nam je što sudjelujete u Danu sigurnijeg interneta! Probajte ponovno ili riješite kviz 'Fake News' za
+        pokušaj osvajanja nagrade."
+    </string>
+
+    <string name="screenshot">
+        "Molimo da napravite screenshot (uslikate zaslon mobitela) Vašeg koda i pošaljete na mail <br />
+        <b>kviz2020@dansigurnijeginterneta.org</b><br /> i ako isti bude izvučen za neku od nagrada,
+        zatražite od roditelja ili skrbnika da nas kontaktira na broj 0800 606 606"
+    </string>
 </resources>
