@@ -28,7 +28,7 @@
         <Button
             android:id="@+id/btnFakeNews"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="80dp"
             android:text="Pokreni Fake News Kviz" />
 
     </LinearLayout>

@@ -19,8 +19,7 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,14 +28,16 @@
         <Button
             android:id="@+id/btnNasiljeOsnovna"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:text="Osnovna škola" />
 
         <Button
             android:id="@+id/btnNasiljeSrednja"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Srednja škola"/>
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Srednja škola" />
     </LinearLayout>
 
 

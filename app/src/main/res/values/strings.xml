@@ -4,13 +4,11 @@
     <!-- tekstovi za rezultat stranicu  -->
 
     <string name="nedovoljan_postotak">
-        "Žao nam je, niste uspješno riješili dovoljan postotak kviza za sudjelovanje u nagradnoj igri,
-        ali uvijek možete ponovno probati!"
+        "Žao nam je, ali niste uspješno odgovorili na dovoljan broj pitanja za sudjelovanje u nagradnoj igri, ali uvijek možete ponovno probati!"
     </string>
 
     <string name="drago_nam_je">
-        "Drago nam je što sudjelujete u Danu sigurnijeg interneta! Probajte ponovno ili riješite kviz 'Fake News' za
-        pokušaj osvajanja nagrade."
+        "Drago nam je što sudjelujete u Danu sigurnijeg interneta! \n\n Probajte ponovno ili riješite kviz 'Fake News' za pokušaj osvajanja nagrade."
     </string>
 
     <string name="screenshot">
