@@ -7,30 +7,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Activities.Quiz.Introduction.QuizIntroFragmentNews">
 
-    <WebView
-        android:id="@+id/webViewKviz2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
-        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnFakeNews"
+        <WebView
+            android:id="@+id/webViewKviz2"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:text="Pokreni Fake News Kviz" />
+            android:layout_height="0dp"
+            android:layout_weight="20">
 
+        </WebView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnFakeNews"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Pokreni Fake News Kviz" />
+
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
