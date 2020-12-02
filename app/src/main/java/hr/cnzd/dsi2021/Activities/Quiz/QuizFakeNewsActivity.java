@@ -26,7 +26,7 @@ public class QuizFakeNewsActivity extends AppCompatActivity implements IQuizActi
     private Intent resultIntent;
     private Button o1,o2,o3;
 
-    private TextView txtTema,
+    private TextView txtqNum, txtTema,
             naslov1, naslov2, naslov3,
             podnaslov1, podnaslov2, podnaslov3,
             link1, link2, link3;
@@ -53,6 +53,7 @@ public class QuizFakeNewsActivity extends AppCompatActivity implements IQuizActi
     public void init() {
         resultIntent = new Intent(this, QuizResultActivity.class);
         quiz = "fakeNews";
+        txtqNum = findViewById(R.id.tvQNum);
         txtTema = findViewById(R.id.tvTema);
         link1 = findViewById(R.id.tvLink1);
         link2 = findViewById(R.id.tvLink2);
@@ -108,6 +109,7 @@ public class QuizFakeNewsActivity extends AppCompatActivity implements IQuizActi
 
         KvizPitanje p = pitanja.get(trenutnoPitanje);
 
+        txtqNum.setText("#" + String.valueOf(trenutnoPitanje+1));
         txtTema.setText(p.getTema());
 
         link1.setText(p.getOdgovori().get(0).getLink());
