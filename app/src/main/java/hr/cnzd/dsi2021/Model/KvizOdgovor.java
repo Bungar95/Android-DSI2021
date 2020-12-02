@@ -4,7 +4,6 @@ import lombok.Data;
 
 @Data
 public class KvizOdgovor {
-
         private String tekst;
         private String podtekst;
         private String link;

@@ -14,5 +14,4 @@ public class InfoActivityPresenter extends CommonPresenter implements IInfoActiv
     public void created() {
         mView.init();
     }
-
 }

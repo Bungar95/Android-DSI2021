@@ -18,13 +18,24 @@ public class CommonPresenter {
         webView.getSettings().setAllowUniversalAccessFromFileURLs(true);
     }
 
-    public String checkStringIntentExtra(Intent intent, String extraName) {
+    public String stringTestRetrieveExtra(Intent intent, String extraName) {
         String extraValue = "";
         if (intent != null && extraName != null) {
              extraValue = extraName;
-            Log.d("Link ----->", "RADI");
+            Log.d("Intent ----->", "RADI: "+extraValue);
         }else{
             Log.d("Link ----->", "NE RADI");
+        }
+        return extraValue;
+    }
+
+    public int intTestRetrieveExtra(Intent intent, int extraName) {
+        int extraValue = 0;
+        if (intent != null && extraName != 0) {
+            extraValue = extraName;
+            Log.d("Link ----->", "RADI: "+extraValue);
+        }else{
+            Log.d("Link ----->", "NE RADI ILI VRAĆA 0");
         }
         return extraValue;
     }

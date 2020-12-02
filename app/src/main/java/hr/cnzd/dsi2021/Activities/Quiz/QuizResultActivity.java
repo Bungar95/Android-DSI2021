@@ -17,24 +17,38 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.UUID;
 
 import hr.cnzd.dsi2021.Activities.Quiz.Introduction.QuizIntroActivity;
+import hr.cnzd.dsi2021.Presenters.Quiz.IQuizResult;
+import hr.cnzd.dsi2021.Presenters.Quiz.QuizResultPresenter;
 import hr.cnzd.dsi2021.R;
 
-public class QuizResultActivity extends AppCompatActivity {
+public class QuizResultActivity extends AppCompatActivity implements IQuizResult.View {
+
+    TextView txtPostotak, txtNaputak;
+    IQuizResult.Presenter mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_result);
+        mPresenter = new QuizResultPresenter(this);
+        mPresenter.created();
 
-        Intent i = getIntent();
-        int postotak = i.getIntExtra("postotak",0);
-        String vrsta = i.getStringExtra("kviz");
+    }
 
-        TextView txtPostotak = findViewById(R.id.postotak);
+    @Override
+    public void init() {
+        int postotak = mPresenter.intTestRetrieveExtra(getIntent(), getIntent().getIntExtra("postotak",0));
+        String vrsta = mPresenter.stringTestRetrieveExtra(getIntent(), getIntent().getStringExtra("kviz"));
+        setResultText(postotak, vrsta);
+    }
+
+    @Override
+    public void setResultText(int postotak, String vrsta) {
+        txtPostotak = findViewById(R.id.postotak);
+        txtNaputak= findViewById(R.id.naputak);
+
         txtPostotak.setText("Hvala vam što ste sudjelovali u kvizu! \n\n Uspješno ste riješili "
                 + String.valueOf(postotak) + " % kviza!");
-
-        TextView txtNaputak= findViewById(R.id.naputak);
 
         switch(vrsta){
             case "fakeNews" : {
@@ -45,7 +59,9 @@ public class QuizResultActivity extends AppCompatActivity {
                     TextView uuid = findViewById(R.id.uuid);
                     uuid.setText(uniqueID);
 
-                    txtNaputak.setText(Html.fromHtml(String.valueOf(R.string.screenshot)));
+                    txtNaputak.setText(Html.fromHtml("Molimo da napravite screenshot (uslikate zaslon mobitela) Vašeg koda " +
+                            "i pošaljete na mail kviz2020@dansigurnijeginterneta.org i ako isti bude izvučen za neku od nagrada, " +
+                            "zatražite od roditelja ili skrbnika da nas kontaktira na broj 0800 606 606"));
                 } else {
                     txtNaputak.setText(R.string.nedovoljan_postotak);
                     Button b1 = findViewById(R.id.btnKviz);
@@ -61,7 +77,7 @@ public class QuizResultActivity extends AppCompatActivity {
                 break;
             }
             default: {
-                txtNaputak.setText(Html.fromHtml(String.valueOf(R.string.drago_nam_je)));
+                txtNaputak.setText(R.string.drago_nam_je);
             }
         }
 

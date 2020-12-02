@@ -12,7 +12,7 @@ public interface IInfoActivity {
     interface Presenter {
         void created();
         void configureWebView(WebView webView);
-        String checkStringIntentExtra(Intent intent, String extraName);
+        String stringTestRetrieveExtra(Intent intent, String extraName);
     }
 
 }

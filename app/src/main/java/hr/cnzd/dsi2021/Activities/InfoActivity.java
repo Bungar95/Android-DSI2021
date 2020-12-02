@@ -39,7 +39,7 @@ public class InfoActivity extends AppCompatActivity implements IInfoActivity.Vie
             }
         });
         WebView webView = findViewById(R.id.webview);
-        String link = mPresenter.checkStringIntentExtra(getIntent(), getIntent().getStringExtra("url"));
+        String link = mPresenter.stringTestRetrieveExtra(getIntent(), getIntent().getStringExtra("url"));
         mPresenter.configureWebView(webView);
         webView.loadUrl(link);
     }
