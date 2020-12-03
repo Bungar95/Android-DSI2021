@@ -40,7 +40,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             logo2.startAnimation(animation);
 
         } catch (Exception e) {
-            if (e.getMessage() != null && e.getMessage().toLowerCase().contains("webView")) {
+            if (e.getMessage() != null && e.getMessage().toLowerCase().contains("webview")) {
                 Log.d("Splashcreen", "Ne radi, preskačemo");
                 Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);

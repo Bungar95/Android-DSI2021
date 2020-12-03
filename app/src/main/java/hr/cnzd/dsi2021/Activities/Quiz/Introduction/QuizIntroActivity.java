@@ -30,7 +30,7 @@ public class QuizIntroActivity extends AppCompatActivity implements IQuizIntro.V
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_intro_quiz);
         } catch (Exception e) {
-            if (e.getMessage() != null && e.getMessage().toLowerCase().contains("webView")) {
+            if (e.getMessage() != null && e.getMessage().toLowerCase().contains("webview")) {
                 Log.d("QuizIntroActivity", "Ne radi, preskačemo");
                 Intent i = new Intent(this, MainActivity.class);
                 Toast.makeText(this, "Dogodila se greška, vraćamo na glavni izbornik", Toast.LENGTH_LONG).show();
