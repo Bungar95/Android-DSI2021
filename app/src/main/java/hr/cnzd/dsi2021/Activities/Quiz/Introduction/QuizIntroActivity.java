@@ -1,7 +1,10 @@
 package hr.cnzd.dsi2021.Activities.Quiz.Introduction;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +14,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+import hr.cnzd.dsi2021.Activities.MainActivity;
 import hr.cnzd.dsi2021.Presenters.Quiz.IQuizIntro;
 import hr.cnzd.dsi2021.Presenters.Quiz.QuizIntroPresenter;
 import hr.cnzd.dsi2021.R;
@@ -22,8 +26,18 @@ public class QuizIntroActivity extends AppCompatActivity implements IQuizIntro.V
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intro_quiz);
+        try {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_intro_quiz);
+        } catch (Exception e) {
+            if (e.getMessage() != null && e.getMessage().contains("webview")) {
+                Log.d("QuizIntroActivity", "Ne radi, preskačemo");
+                Intent i = new Intent(this, MainActivity.class);
+                Toast.makeText(this, "Dogodila se greška, vraćamo na glavni izbornik", Toast.LENGTH_LONG).show();
+                startActivity(i);
+                finish();
+            }
+        }
         mPresenter = new QuizIntroPresenter(this);
         mPresenter.created();
     }

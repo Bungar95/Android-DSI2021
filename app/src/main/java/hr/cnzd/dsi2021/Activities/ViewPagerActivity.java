@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,10 +27,20 @@ public class ViewPagerActivity extends AppCompatActivity implements IViewPagerAc
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_pager);
-        mPresenter = new ViewPagerActivityPresenter(this);
-        mPresenter.created();
+        try {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_view_pager);
+            mPresenter = new ViewPagerActivityPresenter(this);
+            mPresenter.created();
+        } catch (Exception e){
+            if (e.getMessage() != null && e.getMessage().contains("webView")) {
+                Log.d("ViewPagerActivity", "Ne radi, preskačemo");
+                Intent i = new Intent(this, MainActivity.class);
+                Toast.makeText(this, "Dogodila se greška, vraćamo na glavni izbornik", Toast.LENGTH_LONG).show();
+                startActivity(i);
+                finish();
+            }
+        }
     }
 
     @Override

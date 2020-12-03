@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -19,22 +20,33 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_screen);
-        logo = findViewById(R.id.logo);
-        logo2 = findViewById(R.id.logo2);
+        try {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_splash_screen);
+            logo = findViewById(R.id.logo);
+            logo2 = findViewById(R.id.logo2);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent i = new Intent(SplashScreenActivity.this, MainActivity.class);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent i = new Intent(SplashScreenActivity.this, MainActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+            }, splashTimeOut);
+
+            Animation animation = AnimationUtils.loadAnimation(this, R.anim.splash_animation);
+            logo.startAnimation(animation);
+            logo2.startAnimation(animation);
+
+        } catch (Exception e) {
+            if (e.getMessage() != null && e.getMessage().contains("webview")) {
+                Log.d("Splashcreen", "Ne radi, preskačemo");
+                Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);
                 finish();
             }
-        }, splashTimeOut);
+        }
 
-        Animation animation = AnimationUtils.loadAnimation(this, R.anim.splash_animation);
-        logo.startAnimation(animation);
-        logo2.startAnimation(animation);
     }
 }
