@@ -33,7 +33,7 @@ public class ViewPagerActivity extends AppCompatActivity implements IViewPagerAc
             mPresenter = new ViewPagerActivityPresenter(this);
             mPresenter.created();
         } catch (Exception e){
-            if (e.getMessage() != null && e.getMessage().contains("webView")) {
+            if (e.getMessage() != null && e.getMessage().toLowerCase().contains("webView")) {
                 Log.d("ViewPagerActivity", "Ne radi, preskačemo");
                 Intent i = new Intent(this, MainActivity.class);
                 Toast.makeText(this, "Dogodila se greška, vraćamo na glavni izbornik", Toast.LENGTH_LONG).show();
