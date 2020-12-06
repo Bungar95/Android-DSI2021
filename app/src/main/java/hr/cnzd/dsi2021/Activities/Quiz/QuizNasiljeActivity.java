@@ -24,7 +24,7 @@ public class QuizNasiljeActivity extends AppCompatActivity implements IQuizActiv
     private int trenutnoPitanje;
     private Intent resultIntent;
 
-    private TextView txtPitanje;
+    private TextView txtPitanje, qNum;
     private Button o1,o2,o3,o4;
 
     @Override
@@ -49,6 +49,7 @@ public class QuizNasiljeActivity extends AppCompatActivity implements IQuizActiv
     public void init() {
         resultIntent = new Intent(this, QuizResultActivity.class);
         txtPitanje = findViewById(R.id.pitanje);
+        qNum = findViewById(R.id.tvQNum);
         quiz = "prepoznajmo_nasilje";
         o1=findViewById(R.id.o1);
         o2=findViewById(R.id.o2);
@@ -103,6 +104,7 @@ public class QuizNasiljeActivity extends AppCompatActivity implements IQuizActiv
 
         KvizPitanje p = pitanja.get(trenutnoPitanje);
 
+        qNum.setText("#" + String.valueOf(trenutnoPitanje+1));
         txtPitanje.setText(p.getTekst());
         o1.setText(p.getOdgovori().get(0).getTekst());
         o1.setTag(p.getOdgovori().get(0).isTocno());
