@@ -56,7 +56,7 @@ public class PitanjaStariji {
 // gotovo KvizPitanje
         p = new KvizPitanje();
         p.setVrsta("stariji");
-        p.setTekst("Što od navedenog može uzorkovati pojavu zloćudnog programa ili softvera?");
+        p.setTekst("Što od navedenog može uzrokovati pojavu zloćudnog programa ili softvera?");
         o = new KvizOdgovor();
         o.setTocno(true);
         o.setTekst("Upotreba nepoznatog USB diska za prijenos podataka");
