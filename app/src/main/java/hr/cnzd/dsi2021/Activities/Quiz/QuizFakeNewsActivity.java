@@ -52,6 +52,7 @@ public class QuizFakeNewsActivity extends AppCompatActivity implements IQuizActi
     @Override
     public void init() {
         resultIntent = new Intent(this, QuizResultActivity.class);
+        resultIntent.putExtra("vrsta", getIntent().getStringExtra("vrsta"));
         quiz = "fakeNews";
         txtqNum = findViewById(R.id.tvQNum);
         txtTema = findViewById(R.id.tvTema);

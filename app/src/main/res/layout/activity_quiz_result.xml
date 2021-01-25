@@ -18,12 +18,24 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/resultNaslov"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <TextView
             android:id="@+id/postotak"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:layout_margin="10dp"
             android:gravity="center_horizontal|center_vertical"
-            android:textSize="24sp" />
+            android:textSize="22sp" />
 
         <Space
             android:layout_width="match_parent"

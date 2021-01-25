@@ -48,6 +48,7 @@ public class QuizNasiljeActivity extends AppCompatActivity implements IQuizActiv
     @Override
     public void init() {
         resultIntent = new Intent(this, QuizResultActivity.class);
+        resultIntent.putExtra("vrsta", getIntent().getStringExtra("vrsta"));
         txtPitanje = findViewById(R.id.pitanje);
         qNum = findViewById(R.id.tvQNum);
         quiz = "prepoznajmo_nasilje";

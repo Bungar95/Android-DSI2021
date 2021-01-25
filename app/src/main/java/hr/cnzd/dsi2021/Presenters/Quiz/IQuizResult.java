@@ -6,7 +6,7 @@ public interface IQuizResult {
 
     interface View{
         void init();
-        void setResultText(int postotak, String vrsta);
+        void setResultText(int postotak, String kviz, String vrsta);
     }
     interface Presenter{
         void created();
