@@ -15,8 +15,8 @@ import hr.cnzd.dsi2021.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
-    private ImageView logo, logo2;
-    private static int splashTimeOut = 5500;
+    private ImageView logo, logo2, logo3;
+    private static int splashTimeOut = 3500;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             setContentView(R.layout.activity_splash_screen);
             logo = findViewById(R.id.logo);
             logo2 = findViewById(R.id.logo2);
+            logo3 = findViewById(R.id.logo3);
 
             new Handler().postDelayed(new Runnable() {
                 @Override
@@ -38,6 +39,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             Animation animation = AnimationUtils.loadAnimation(this, R.anim.splash_animation);
             logo.startAnimation(animation);
             logo2.startAnimation(animation);
+            logo3.startAnimation(animation);
 
         } catch (Exception e) {
             if (e.getMessage() != null && e.getMessage().toLowerCase().contains("webview")) {

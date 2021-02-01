@@ -83,7 +83,7 @@ public class QuizResultActivity extends AppCompatActivity implements IQuizResult
             }
             default: {
 
-                txtNaslov.setText("DSI 2021. ("+ vrsta +") rezultat:");
+                txtNaslov.setText("DSI 2021. rezultat:");
 
                 if (postotak >= 90) {
 
